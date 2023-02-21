@@ -156,5 +156,21 @@ namespace MMSG.CodeBinding
             Assert.AreEqual(input.job, output.job);
             Assert.IsTrue(output.updatedAt.Length > 0);
         }
+
+        [Given(@"I submit the request to update user's specific info")]
+        public void GivenISubmitTheRequestToUpdateUsersSpecificInfo(Table table)
+        {
+            var request = new RestRequest("api/users/{id}");
+            var person = table.CreateInstance<Person>();
+            var pStr = JsonConvert.SerializeObject(person);
+            request.AddBody(pStr, ContentType.Json);
+            request.AddUrlSegment("id", person.id);
+            var response = client.Patch(request);
+            Assert.IsNotNull(response);
+            Assert.AreEqual("OK", response.StatusCode.ToString());
+            _scenarioContext["putUserResp"] = response.Content;
+            _scenarioContext["input"] = person;
+        }
+
     }
 }

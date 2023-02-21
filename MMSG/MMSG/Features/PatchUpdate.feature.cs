@@ -20,23 +20,23 @@ namespace MMSG.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Update User")]
-    public partial class UpdateUserFeature
+    [NUnit.Framework.DescriptionAttribute("Patch User")]
+    public partial class PatchUserFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "UpdateUser.feature"
+#line 1 "PatchUpdate.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Update User", "As a consumer of the API, when I submit the payload for a updating a User then th" +
-                    "e api should update the user info & return the response", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Patch User", "As a consumer of the API, when I submit the payload for a updating a User then th" +
+                    "e api should update only the given user info & return the response", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,12 +75,12 @@ namespace MMSG.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update a User")]
-        public void UpdateAUser()
+        [NUnit.Framework.DescriptionAttribute("Update User\'s specific info")]
+        public void UpdateUsersSpecificInfo()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update a User", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update User\'s specific info", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -91,16 +91,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "id",
                             "name",
                             "job"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "999",
                             "Walker Hayes",
-                            "Country Singer"});
+                            "Singer"});
 #line 6
- testRunner.Given("I submit the request to update user", ((string)(null)), table3, "Given ");
+ testRunner.Given("I submit the request to update user\'s specific info", ((string)(null)), table2, "Given ");
 #line hidden
 #line 9
  testRunner.Then("the API should return the updated user\'s info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
