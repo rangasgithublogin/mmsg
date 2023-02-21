@@ -1,0 +1,17 @@
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\nunit.engine.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\nunit.engine.api.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\nunit.engine.core.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\testcentric.engine.metadata.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\MMSG.deps.json
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\MMSG.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\bin\Debug\netcoreapp2.1\MMSG.pdb
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.csproj.AssemblyReference.cache
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.AssemblyInfoInputs.cache
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.AssemblyInfo.cs
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.csproj.CoreCompileInputs.cache
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.dll
+C:\Users\ranga\source\repos\MMSG\mmsg\MMSG\MMSG\obj\Debug\netcoreapp2.1\MMSG.pdb
