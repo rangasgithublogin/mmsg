@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Security.Principal;
 using RestSharp.Serializers;
+using System.Linq;
 
 namespace MMSG.CodeBinding
 {
@@ -73,6 +74,7 @@ namespace MMSG.CodeBinding
             _scenarioContext["getUsersResp"] = response.Content;
         }
 
+        [When(@"the API lists all users on the given page")]
         [Then(@"the API lists all users on the given page")]
         public void ThenTheAPIListsAllUsersOnTheGivenPage()
         {
@@ -90,13 +92,14 @@ namespace MMSG.CodeBinding
             request.AddUrlSegment("id", userId);
             var response = client.Get(request);
             Assert.IsNotNull(response);
-            Assert.AreEqual("OK", response.StatusCode.ToString());
+            _scenarioContext["statusCode"] = response.StatusCode.ToString();
             _scenarioContext["getUserResp"] = response.Content;
         }
 
-        [Then(@"the API returns the details of user id (.*)")]
-        public void ThenTheAPIReturnsTheDetailsOfUserId(int userId)
+        [Then(@"the API response contains the details of user id (.*)")]
+        public void ThenTheAPIResponseContainsTheDetailsOfUserId(int userId)
         {
+            Assert.AreEqual("OK", (string)_scenarioContext["statusCode"]);
             string response = (string)_scenarioContext["getUserResp"];
             Assert.IsNotNull(response);
             userJson u1 = JsonConvert.DeserializeObject<userJson>(response);
@@ -170,6 +173,21 @@ namespace MMSG.CodeBinding
             Assert.AreEqual("OK", response.StatusCode.ToString());
             _scenarioContext["putUserResp"] = response.Content;
             _scenarioContext["input"] = person;
+        }
+
+        [Then(@"a (.*) Not Found is retured")]
+        public void ThenANotFoundIsRetured(int p0)
+        {
+            Assert.AreEqual("NotFound", (string)_scenarioContext["statusCode"]);
+        }
+
+        [Then(@"verify that user (.*) is found in the list")]
+        public void ThenVerifyThatUserIsFoundInTheList(string name)
+        {
+            string response = (string)_scenarioContext["getUsersResp"];
+            Users users = JsonConvert.DeserializeObject<Users>(response);
+            var user = users.data.Where(user => user.first_name.Equals(name.Split(" ")[0]) && user.last_name.Equals(name.Split(" ")[1]));
+            Assert.IsNotEmpty(user);
         }
 
     }

@@ -28,7 +28,7 @@ namespace MMSG.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Users.feature"
+#line 1 "ListUsers.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -76,10 +76,14 @@ namespace MMSG.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("List Users on a given page")]
-        public void ListUsersOnAGivenPage()
+        [NUnit.Framework.TestCaseAttribute("Lindsay Ferguson", null)]
+        [NUnit.Framework.TestCaseAttribute("Byron Fields", null)]
+        [NUnit.Framework.TestCaseAttribute("George Edwards", null)]
+        public void ListUsersOnAGivenPage(string name, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("name", name);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("List Users on a given page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
@@ -92,10 +96,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
-testRunner.Given("a call to list all users on page 2 is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a call to list all users on page 2 is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
-testRunner.Then("the API lists all users on the given page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the API lists all users on the given page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 6
+ testRunner.Then(string.Format("verify that user {0} is found in the list", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
