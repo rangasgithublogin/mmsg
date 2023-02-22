@@ -20,23 +20,23 @@ namespace MMSG.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Patch User")]
-    public partial class PatchUserFeature
+    [NUnit.Framework.DescriptionAttribute("Login Successful")]
+    public partial class LoginSuccessfulFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "PatchUpdate.feature"
+#line 1 "Login.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Patch User", "As a consumer of the API, when I submit the payload for a updating a User then th" +
-                    "e api should update only the given user info & return the response", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login Successful", "As a consumer of the API, when I submit valid credentials the API should return v" +
+                    "alid token.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,12 +75,12 @@ namespace MMSG.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update User\'s specific info")]
-        public void UpdateUsersSpecificInfo()
+        [NUnit.Framework.DescriptionAttribute("Login with valid credo")]
+        public void LoginWithValidCredo()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update User\'s specific info", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with valid credo", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -91,19 +91,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "id",
-                            "name",
-                            "job"});
-                table3.AddRow(new string[] {
-                            "999",
-                            "Walker Hayes",
-                            "Singer"});
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "email",
+                            "password"});
+                table2.AddRow(new string[] {
+                            "eve.holt@reqres.in",
+                            "Y2l0eXNsaWNrYQ=="});
 #line 6
- testRunner.Given("I submit the request to update user\'s specific info", ((string)(null)), table3, "Given ");
+ testRunner.Given("I call the Login API with valid credentials", ((string)(null)), table2, "Given ");
 #line hidden
 #line 9
- testRunner.Then("the API should return the updated user\'s info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the API responds with a valid token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

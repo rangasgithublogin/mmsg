@@ -91,16 +91,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "id",
                             "name",
                             "job"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "999",
                             "Walker Hayes",
                             "Country Singer"});
 #line 6
- testRunner.Given("I submit the request to update user", ((string)(null)), table3, "Given ");
+ testRunner.Given("I submit the request to update user", ((string)(null)), table4, "Given ");
 #line hidden
 #line 9
  testRunner.Then("the API should return the updated user\'s info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

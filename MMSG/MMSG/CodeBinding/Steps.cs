@@ -51,6 +51,13 @@ namespace MMSG.CodeBinding
         public string updatedAt { get; set; }
     }
 
+    class loginCredo
+    {
+        public string email { get; set; }
+        public string password { get; set; }
+        public string token { get; set; }
+    }
+
     [Binding]
     public class Steps
     {
@@ -188,6 +195,30 @@ namespace MMSG.CodeBinding
             Users users = JsonConvert.DeserializeObject<Users>(response);
             var user = users.data.Where(user => user.first_name.Equals(name.Split(" ")[0]) && user.last_name.Equals(name.Split(" ")[1]));
             Assert.IsNotEmpty(user);
+        }
+
+        [Given(@"I call the Login API with valid credentials")]
+        public void GivenICallTheLoginAPIWithValidCredentials(Table table)
+        {
+            var credo = table.CreateInstance<loginCredo>();
+            var valueBytes = System.Convert.FromBase64String(credo.password);
+            var pwd = System.Text.Encoding.UTF8.GetString(valueBytes);
+            credo.password = pwd;
+            var json = JsonConvert.SerializeObject(credo);
+            var request = new RestRequest("api/login");
+            request.AddBody(json, ContentType.Json);
+            var response = client.Post(request);
+            Assert.IsNotNull(response);
+            Assert.AreEqual("OK", response.StatusCode.ToString());
+            _scenarioContext["output"] = response.Content;
+        }
+
+        [Then(@"the API responds with a valid token")]
+        public void ThenTheAPIRespondsWithAValidToken()
+        {
+            string response = (string)_scenarioContext["output"];
+            loginCredo output = JsonConvert.DeserializeObject<loginCredo>(response);
+            Assert.IsTrue(output.token.Length > 0);
         }
 
     }
